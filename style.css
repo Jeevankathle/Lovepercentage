@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #6a82fb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.content img {
+    width: 80px;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+}
+
+.content h1 {
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.inputarea {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.love-icon {
+    font-size: 60px;
+    color: #ff4b5c;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+}
+
+.inputarea input {
+    padding: 12px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    font-size: 18px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.inputarea input:focus {
+    border-color: #ff4b5c;
+    box-shadow: 0 0 10px #ff4b5c;
+}
+
+a {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff4b5c, #ff758c);
+    padding: 12px 30px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff4b5c;
+}
+
+#print {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #fff;
+    animation: fadeIn 1s ease forwards;
+}
+
+#statement {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+}
