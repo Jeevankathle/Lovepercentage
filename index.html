@@ -3,21 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Percentage</title>
+    <title>Love Percentage & Numerology</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="content">
-            <i class="fa-solid fa-heart love-icon"></i>
+            <i class="fa-solid fa-heart love-icon" id="mainHeart"></i>
 
             <h1>Love Percentage</h1>
+            
             <div class="inputarea">
-                <input type="text" placeholder="Your Name" id="NameOne">
-                <input type="text" placeholder="Your Lover" id="NameTwo">
+                <div class="user-block">
+                    <input type="text" placeholder="Your Name" id="NameOne">
+                    <div class="birth-row">
+                        <select id="DayOne">
+                            <option value="" disabled selected>Day</option>
+                            <script>
+                                for(let i=1; i<=31; i++) document.write(`<option value="${i}">${i}</option>`);
+                            </script>
+                        </select>
+                        <select id="MonthOne">
+                            <option value="" disabled selected>Month</option>
+                            <script>
+                                const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+                                months.forEach((m, idx) => document.write(`<option value="${idx+1}">${m}</option>`));
+                            </script>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="user-block">
+                    <input type="text" placeholder="Your Lover" id="NameTwo">
+                    <div class="birth-row">
+                        <select id="DayTwo">
+                            <option value="" disabled selected>Day</option>
+                            <script>
+                                for(let i=1; i<=31; i++) document.write(`<option value="${i}">${i}</option>`);
+                            </script>
+                        </select>
+                        <select id="MonthTwo">
+                            <option value="" disabled selected>Month</option>
+                            <script>
+                                months.forEach((m, idx) => document.write(`<option value="${idx+1}">${m}</option>`));
+                            </script>
+                        </select>
+                    </div>
+                </div>
             </div>
-            <a href="#" onclick="love()">Calculate</a>
+
+            <a href="#" onclick="love(); return false;" id="calcBtn">Calculate</a>
+
+            <div id="loadingStatus" class="loading-status hidden">
+                <i class="fa-solid fa-circle-notch fa-spin"></i>
+                <span id="loadingText">Aligning Stars...</span>
+            </div>
+
             <p id="print">Your relationship result here</p>
             <p id="statement"></p>
         </div>
